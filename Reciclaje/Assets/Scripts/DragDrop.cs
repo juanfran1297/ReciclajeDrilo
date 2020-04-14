@@ -9,8 +9,20 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
     private RectTransform rectTransform;
     private CanvasGroup canvasGroup;
 
+    public Transform respawn;
+
     private void Awake()
     {
+        GameObject auxRespawn = GameObject.Find("Respawn");
+        if (auxRespawn!= null)
+        {
+            respawn = auxRespawn.GetComponent<Transform>();
+        }
+        else
+        {
+            Debug.LogError("No se encuentra el Respawn");
+        }
+
         GameObject aux = GameObject.Find("CanvasPrincipal");
         if(aux != null)
         {
@@ -39,6 +51,8 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
     {
         canvasGroup.alpha = 1f;
         canvasGroup.blocksRaycasts = true;
+
+        transform.position = respawn.position;
     }
 
     public void OnPointerDown(PointerEventData eventData)

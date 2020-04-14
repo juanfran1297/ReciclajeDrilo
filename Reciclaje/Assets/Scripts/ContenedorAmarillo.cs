@@ -2,65 +2,41 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class ContenedorAmarillo : MonoBehaviour, IDropHandler
 {
-    public GameObject basura;
-    public Transform respawn;
-
-    public EleccionBasura eleccionBasura;
-    public Timer timer;
+    public GameManager gameManager;
+    private CanvasGroup canvasGroup;
 
     private void Start()
     {
-        basura = GameObject.Find("Basura");
-        GameObject aux = GameObject.Find("Respawn");
-        if (aux != null)
+        GameObject auxManager = GameObject.Find("GameManager");
+        if (auxManager != null)
         {
-            respawn = aux.GetComponent<Transform>();
+            gameManager = auxManager.GetComponent<GameManager>();
         }
         else
         {
-            Debug.LogError("No se encuentra el Respawn");
+            Debug.LogError("No se encuentra el GameManager");
         }
 
-        GameObject auxEleccion = GameObject.Find("Basura");
-        if (auxEleccion != null)
-        {
-            eleccionBasura = auxEleccion.GetComponent<EleccionBasura>();
-        }
-        else
-        {
-            Debug.LogError("No se encuentra el Script EleccionBasura");
-        }
-
-        GameObject auxTimer = GameObject.Find("GameManager");
-        if (auxTimer != null)
-        {
-            timer = auxTimer.GetComponent<Timer>();
-        }
-        else
-        {
-            Debug.LogError("No se encuentra el Script Timer");
-        }
+        canvasGroup = GetComponent<CanvasGroup>();
     }
 
     public void OnDrop(PointerEventData eventData)
     {
-        if(eventData.pointerDrag != null)
+        if (eventData.pointerDrag != null)
         {
-            if(eventData.pointerDrag.tag == "Amarillo")
+            if (eventData.pointerDrag.tag == "Amarillo")
             {
                 Debug.Log("Has acertado");
-                timer.tiempo += 5;
-                basura.transform.position = respawn.position;
-                eleccionBasura.NuevaBasura();
+                gameManager.Acierto();
             }
             else
             {
                 Debug.Log("Has fallado");
-                timer.tiempo -= 5;
-                basura.transform.position = respawn.position;
+                gameManager.Fallo();
             }
         }
     }

@@ -69,6 +69,7 @@
     <Compile Include="Assets\Scripts\ContenedorMarron.cs" />
     <Compile Include="Assets\Scripts\ContenedorPuntoLimpio.cs" />
     <Compile Include="Assets\Scripts\ContenedorVerde.cs" />
+    <Compile Include="Assets\Scripts\ControlEscenas.cs" />
     <Compile Include="Assets\Scripts\DragDrop.cs" />
     <Compile Include="Assets\Scripts\EleccionBasura.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />

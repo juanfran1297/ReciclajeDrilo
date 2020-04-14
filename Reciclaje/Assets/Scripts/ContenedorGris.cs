@@ -5,43 +5,18 @@ using UnityEngine.EventSystems;
 
 public class ContenedorGris : MonoBehaviour, IDropHandler
 {
-    public GameObject basura;
-    public Transform respawn;
-
-    public EleccionBasura eleccionBasura;
-    public Timer timer;
+    public GameManager gameManager;
 
     private void Start()
     {
-        basura = GameObject.Find("Basura");
-        GameObject aux = GameObject.Find("Respawn");
-        if (aux != null)
+        GameObject auxManager = GameObject.Find("GameManager");
+        if (auxManager != null)
         {
-            respawn = aux.GetComponent<Transform>();
+            gameManager = auxManager.GetComponent<GameManager>();
         }
         else
         {
-            Debug.LogError("No se encuentra el Respawn");
-        }
-
-        GameObject auxEleccion = GameObject.Find("Basura");
-        if (auxEleccion != null)
-        {
-            eleccionBasura = auxEleccion.GetComponent<EleccionBasura>();
-        }
-        else
-        {
-            Debug.LogError("No se encuentra el Script EleccionBasura");
-        }
-
-        GameObject auxTimer = GameObject.Find("GameManager");
-        if (auxTimer != null)
-        {
-            timer = auxTimer.GetComponent<Timer>();
-        }
-        else
-        {
-            Debug.LogError("No se encuentra el Script Timer");
+            Debug.LogError("No se encuentra el GameManager");
         }
     }
 
@@ -52,15 +27,12 @@ public class ContenedorGris : MonoBehaviour, IDropHandler
             if (eventData.pointerDrag.tag == "Gris")
             {
                 Debug.Log("Has acertado");
-                timer.tiempo += 5;                
-                basura.transform.position = respawn.position;
-                eleccionBasura.NuevaBasura();
+                gameManager.Acierto();
             }
             else
             {
                 Debug.Log("Has fallado");
-                timer.tiempo -= 5;
-                basura.transform.position = respawn.position;
+                gameManager.Fallo();
             }
         }
     }

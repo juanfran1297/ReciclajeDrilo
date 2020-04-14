@@ -7,6 +7,7 @@ ScriptsOnlyBuild:
     - ContenedorMarron
     - ContenedorPuntoLimpio
     - ContenedorVerde
+    - ControlEscenas
     - DragDrop
     - EleccionBasura
     - GameManager
@@ -44,42 +45,48 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
+    - Class: 82
+      Script: {instanceID: 0}
+    - Class: 83
+      Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 9796}
+      Script: {instanceID: 9674}
     - Class: 114
-      Script: {instanceID: 9944}
+      Script: {instanceID: 9756}
     - Class: 114
-      Script: {instanceID: 9984}
+      Script: {instanceID: 9824}
     - Class: 114
-      Script: {instanceID: 10350}
+      Script: {instanceID: 9864}
     - Class: 114
-      Script: {instanceID: 10684}
+      Script: {instanceID: 10022}
     - Class: 114
-      Script: {instanceID: 11124}
+      Script: {instanceID: 10188}
     - Class: 114
-      Script: {instanceID: 11464}
+      Script: {instanceID: 10234}
     - Class: 114
-      Script: {instanceID: 16032}
+      Script: {instanceID: 10568}
     - Class: 114
-      Script: {instanceID: 16498}
+      Script: {instanceID: 10856}
     - Class: 114
-      Script: {instanceID: 17974}
+      Script: {instanceID: 11010}
     - Class: 114
-      Script: {instanceID: 18900}
+      Script: {instanceID: 11032}
     - Class: 114
-      Script: {instanceID: 18906}
+      Script: {instanceID: 11158}
     - Class: 114
-      Script: {instanceID: 18912}
+      Script: {instanceID: 11282}
     - Class: 114
-      Script: {instanceID: 18918}
+      Script: {instanceID: 11294}
     - Class: 114
-      Script: {instanceID: 18924}
+      Script: {instanceID: 11300}
     - Class: 114
-      Script: {instanceID: 20032}
+      Script: {instanceID: 11360}
     - Class: 114
-      Script: {instanceID: 21112}
+      Script: {instanceID: 11406}
+    - Class: 114
+      Script: {instanceID: 21844}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -121,6 +128,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TMP_Dropdown
+  - hash:
+      serializedVersion: 2
+      Hash: 62e040979f1bcc5cfdb183bf34b809bf
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ContenedorAzul
   - hash:
       serializedVersion: 2
       Hash: e7a73f5f78ba6445195ec23b74a1ce2d
@@ -213,6 +226,12 @@ ScriptsOnlyBuild:
     className: PhysicsRaycaster
   - hash:
       serializedVersion: 2
+      Hash: 62e040979f1bcc5cfdb183bf34b809bf
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ContenedorPuntoLimpio
+  - hash:
+      serializedVersion: 2
       Hash: bd3cf68c8964d3c66d1c43f4f98508c9
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
@@ -253,6 +272,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: Shadow
+  - hash:
+      serializedVersion: 2
+      Hash: 31170e8985dd49423b3a6df9714e45eb
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: EleccionBasura
   - hash:
       serializedVersion: 2
       Hash: cc4274b586df3c02688bac01b88bd16c
@@ -387,6 +412,12 @@ ScriptsOnlyBuild:
     className: TimelineAsset
   - hash:
       serializedVersion: 2
+      Hash: c7b1a1da36cb268f6c2c27aafcce956c
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: DragDrop
+  - hash:
+      serializedVersion: 2
       Hash: 3b760e6526e13f7504f59e210145899a
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
@@ -411,10 +442,22 @@ ScriptsOnlyBuild:
     className: BeforeAfterTestCommandState
   - hash:
       serializedVersion: 2
+      Hash: 62e040979f1bcc5cfdb183bf34b809bf
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ContenedorVerde
+  - hash:
+      serializedVersion: 2
       Hash: c3d3430df9e3ea95e3e3d587961390fb
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: MarkerTrack
+  - hash:
+      serializedVersion: 2
+      Hash: 771b9f464757f5e3c017e6c4b7f45b36
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Timer
   - hash:
       serializedVersion: 2
       Hash: d791aa6007fa3640be1164ea75bb087d
@@ -435,16 +478,34 @@ ScriptsOnlyBuild:
     className: TMP_ColorGradient
   - hash:
       serializedVersion: 2
+      Hash: 62e040979f1bcc5cfdb183bf34b809bf
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ContenedorMarron
+  - hash:
+      serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: UnityEngine.TestRunner.dll
     namespaceName: UnityEngine.TestTools.TestRunner.Callbacks
     className: PlayModeRunnerCallback
   - hash:
       serializedVersion: 2
+      Hash: 62e040979f1bcc5cfdb183bf34b809bf
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ContenedorAmarillo
+  - hash:
+      serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.EventSystems
     className: BaseInput
+  - hash:
+      serializedVersion: 2
+      Hash: 62e040979f1bcc5cfdb183bf34b809bf
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ContenedorGris
   - hash:
       serializedVersion: 2
       Hash: caa533b001ae39b864ba8425019e2268
@@ -501,6 +562,12 @@ ScriptsOnlyBuild:
     className: Slider
   - hash:
       serializedVersion: 2
+      Hash: 66f63734e0cdc70ff015e028df8db366
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: GameManager
+  - hash:
+      serializedVersion: 2
       Hash: 0fd6822f6177297bd0eb4d83cc7a9030
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
@@ -513,64 +580,10 @@ ScriptsOnlyBuild:
     className: PlayableTrack
   - hash:
       serializedVersion: 2
-      Hash: e9539b36af987b1fc4d5169f5d2f3d29
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: DragDrop
-  - hash:
-      serializedVersion: 2
-      Hash: 90ede74c1d75caf04c7d64e9c2873dc3
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: ContenedorAmarillo
-  - hash:
-      serializedVersion: 2
-      Hash: 4aa1bb52b197b80de1e69176d8a9a2df
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: EleccionBasura
-  - hash:
-      serializedVersion: 2
-      Hash: 90ede74c1d75caf04c7d64e9c2873dc3
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: ContenedorAzul
-  - hash:
-      serializedVersion: 2
-      Hash: 90ede74c1d75caf04c7d64e9c2873dc3
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: ContenedorVerde
-  - hash:
-      serializedVersion: 2
-      Hash: 90ede74c1d75caf04c7d64e9c2873dc3
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: ContenedorMarron
-  - hash:
-      serializedVersion: 2
-      Hash: 90ede74c1d75caf04c7d64e9c2873dc3
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: ContenedorGris
-  - hash:
-      serializedVersion: 2
-      Hash: 90ede74c1d75caf04c7d64e9c2873dc3
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: ContenedorPuntoLimpio
-  - hash:
-      serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: GameManager
-  - hash:
-      serializedVersion: 2
-      Hash: 771b9f464757f5e3c017e6c4b7f45b36
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: Timer
+    className: ControlEscenas
   platform: 13
   scenePathNames:
   - Assets/Scenes/Nivel3.unity
