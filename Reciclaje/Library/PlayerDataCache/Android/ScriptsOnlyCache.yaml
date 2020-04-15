@@ -11,12 +11,21 @@ ScriptsOnlyBuild:
     - DragDrop
     - EleccionBasura
     - GameManager
+    - PointBarScript
     - Timer
+    Unity.TextMeshPro.dll:
+    - TMPro.TMP_FontAsset
+    - TMPro.TMP_Settings
+    - TMPro.TMP_SpriteAsset
+    - TMPro.TMP_StyleSheet
+    - TMPro.TextMeshProUGUI
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -28,6 +37,7 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.CanvasScaler
     - UnityEngine.UI.GraphicRaycaster
     - UnityEngine.UI.Image
+    - UnityEngine.UI.Slider
     - UnityEngine.UI.Text
   sceneClasses:
     Assets/Scenes/Nivel3.unity:
@@ -43,13 +53,23 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 48
       Script: {instanceID: 0}
+    - Class: 49
+      Script: {instanceID: 0}
+    - Class: 74
+      Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
     - Class: 82
       Script: {instanceID: 0}
     - Class: 83
       Script: {instanceID: 0}
+    - Class: 91
+      Script: {instanceID: 0}
+    - Class: 95
+      Script: {instanceID: 0}
     - Class: 104
+      Script: {instanceID: 0}
+    - Class: 109
       Script: {instanceID: 0}
     - Class: 114
       Script: {instanceID: 9674}
@@ -66,27 +86,41 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 10234}
     - Class: 114
+      Script: {instanceID: 10254}
+    - Class: 114
       Script: {instanceID: 10568}
+    - Class: 114
+      Script: {instanceID: 10776}
+    - Class: 114
+      Script: {instanceID: 10790}
     - Class: 114
       Script: {instanceID: 10856}
     - Class: 114
-      Script: {instanceID: 11010}
+      Script: {instanceID: 10952}
     - Class: 114
-      Script: {instanceID: 11032}
+      Script: {instanceID: 10972}
     - Class: 114
-      Script: {instanceID: 11158}
+      Script: {instanceID: 11012}
     - Class: 114
-      Script: {instanceID: 11282}
+      Script: {instanceID: 11034}
     - Class: 114
-      Script: {instanceID: 11294}
+      Script: {instanceID: 11160}
     - Class: 114
-      Script: {instanceID: 11300}
+      Script: {instanceID: 11162}
     - Class: 114
-      Script: {instanceID: 11360}
+      Script: {instanceID: 11284}
     - Class: 114
-      Script: {instanceID: 11406}
+      Script: {instanceID: 11296}
     - Class: 114
-      Script: {instanceID: 21844}
+      Script: {instanceID: 11302}
+    - Class: 114
+      Script: {instanceID: 11362}
+    - Class: 114
+      Script: {instanceID: 11394}
+    - Class: 114
+      Script: {instanceID: 11408}
+    - Class: 114
+      Script: {instanceID: 19120}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -274,7 +308,7 @@ ScriptsOnlyBuild:
     className: Shadow
   - hash:
       serializedVersion: 2
-      Hash: 31170e8985dd49423b3a6df9714e45eb
+      Hash: 34e1d7df3d75e124cf29e99240d19554
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: EleccionBasura
@@ -424,6 +458,12 @@ ScriptsOnlyBuild:
     className: TextMeshProUGUI
   - hash:
       serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ControlEscenas
+  - hash:
+      serializedVersion: 2
       Hash: f336e086360abe49a3323e5f1583c35a
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
@@ -562,7 +602,7 @@ ScriptsOnlyBuild:
     className: Slider
   - hash:
       serializedVersion: 2
-      Hash: 66f63734e0cdc70ff015e028df8db366
+      Hash: f35670c853dadd7e4b9359c91d378ec9
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: GameManager
@@ -580,10 +620,10 @@ ScriptsOnlyBuild:
     className: PlayableTrack
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+      Hash: 4b8dff74c0603f3e6246514a412ffcba
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: ControlEscenas
+    className: PointBarScript
   platform: 13
   scenePathNames:
   - Assets/Scenes/Nivel3.unity
