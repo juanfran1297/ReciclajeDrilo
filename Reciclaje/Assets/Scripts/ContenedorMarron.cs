@@ -26,12 +26,10 @@ public class ContenedorMarron : MonoBehaviour, IDropHandler
         {
             if (eventData.pointerDrag.tag == "Marron")
             {
-                Debug.Log("Has acertado");
                 gameManager.Acierto();
             }
             else
             {
-                Debug.Log("Has fallado");
                 gameManager.Fallo();
             }
         }

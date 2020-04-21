@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.XR;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -10,20 +10,25 @@ public class GameManager : MonoBehaviour
     public Text txtPuntos;
     public Text txtPuntosFinal;
 
-    public GameObject basura;
-    public EleccionBasura eleccionBasura;
-    public Transform respawn;
-    public Timer timer;
+    private GameObject basura;
+    private GameObject siguienteNivel;
+    private EleccionBasura eleccionBasura;
+    private Transform respawn;
+    private Timer timer;
+    private VidasScript vidasScript;
 
-    public Text txtAciertoFallo;
-    public AudioSource audioSource;
+    public Sprite[] imagenFondos;
+    private Image fondo;
+
+    private AudioSource audioSource;
+    public AudioClip audioEmpezar;
     public AudioClip audioAcierto;
     public AudioClip audioFallo;
+    public AudioClip audioSiguienteNivel;
 
-    public GameObject diploma;
-    public GameObject tryAgain;
-
-    public PointBarScript pointBar;
+    private GameObject tryAgain;
+    private GameObject victoria;
+    private GameObject juego;
 
     public Animator driloAnim;
 
@@ -31,15 +36,16 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        diploma = GameObject.Find("Diploma");
-        if(diploma != null)
+        siguienteNivel = GameObject.Find("SiguienteNivel");
+        if(siguienteNivel != null)
         {
-            diploma.SetActive(false);
+            siguienteNivel.SetActive(false);
         }
         else
         {
-            Debug.LogError("No se encuentra el diploma");
+            Debug.LogError("No se encuentra siguiente Nivel, asegurate de que está en la escena");
         }
+
         tryAgain = GameObject.Find("TryAgain");
         if(tryAgain != null)
         {
@@ -50,7 +56,26 @@ public class GameManager : MonoBehaviour
             Debug.LogError("No se encuentra TryAgain");
         }
 
-        txtAciertoFallo.enabled = false;
+        victoria = GameObject.Find("CanvasVictoria");
+        if (victoria != null)
+        {
+            victoria.SetActive(false);
+        }
+        else
+        {
+            Debug.LogError("No se encuentra 'CanvasVictoria', asegurate de que está en la escena");
+        }
+
+        juego = GameObject.Find("CanvasPrincipal");
+        if (juego != null)
+        {
+            juego.SetActive(true);
+        }
+        else
+        {
+            Debug.LogError("No se encuentra 'CanvasPrincipal', asegurate de que está en la escena");
+        }
+
         puntos = 0;
         audioSource = GetComponent<AudioSource>();
 
@@ -74,9 +99,21 @@ public class GameManager : MonoBehaviour
             Debug.LogError("No se encuentra el Respawn");
         }
 
+        GameObject auxFondo = GameObject.Find("Fondo");
+        if(auxFondo != null)
+        {
+            fondo = auxFondo.GetComponent<Image>();
+        }
+        else
+        {
+            Debug.LogError("No se ha encontrado el Fondo, asegurate de que en las escena hay un GameObject llamado Fondo");
+        }
+
+        vidasScript = GetComponent<VidasScript>();
         timer = GetComponent<Timer>();
 
-        pointBar.SetMinPoint(puntos);
+
+        StartCoroutine(SonidoEmpezar());
     }
 
     // Update is called once per frame
@@ -86,14 +123,37 @@ public class GameManager : MonoBehaviour
         txtPuntosFinal.text = puntos.ToString();
         if(puntos >= 100)
         {
+            vidasScript.enabled = false;
             timer.enabled = false;
-            diploma.SetActive(true);
+            victoria.SetActive(true);
+            juego.SetActive(false);
         }
 
-        if(timer.derrota == true)
+        if(timer.derrota == true || vidasScript.numVidas <= 0)
         {
+            vidasScript.enabled = false;
             timer.enabled = false;
             tryAgain.SetActive(true);
+        }
+
+        switch (puntos)
+        {
+            case 0:
+                Debug.Log("Nuevo Fondo");
+                fondo.sprite = imagenFondos[0];
+                break;
+            case 25:
+                fondo.sprite = imagenFondos[1];
+                Debug.Log("Nuevo Fondo");
+                break;
+            case 50:
+                fondo.sprite = imagenFondos[2];
+                Debug.Log("Nuevo Fondo");
+                break;
+            case 70:
+                fondo.sprite = imagenFondos[3];
+                Debug.Log("Nuevo Fondo");
+                break;
         }
     }
     #endregion
@@ -104,44 +164,80 @@ public class GameManager : MonoBehaviour
         StartCoroutine(TextoAcierto());
         puntos++;
         timer.tiempo += 5;
-        pointBar.SetPoint(puntos);
-        basura.transform.position = respawn.position;
-        eleccionBasura.NuevaBasura();
+        if(puntos == 25 || puntos == 50 || puntos == 70)
+        {
+            GanarSiguienteNivel();
+        }
+        else
+        {
+            basura.transform.position = respawn.position;
+            eleccionBasura.NuevaBasura();
+        }
     }
 
     public void Fallo()
     {
         timer.tiempo -= 5;
+        vidasScript.DeleteHeart();
         StartCoroutine(TextoFallo());
         basura.transform.position = respawn.position;
     }
+    public void GanarSiguienteNivel()
+    {
+        vidasScript.AddHeart();
+        audioSource.Stop();
+        audioSource.volume = .3f;
+        audioSource.PlayOneShot(audioSiguienteNivel);
+        siguienteNivel.SetActive(true);
+        timer.enabled = false;
+        basura.GetComponent<Image>().enabled = false;
+    }
+    public void NextLevel()
+    {
+        audioSource.Stop();
+        siguienteNivel.SetActive(false);
+        audioSource.volume = .08f;
+        timer.enabled = true;
+        basura.transform.position = respawn.position;
+        eleccionBasura.AparicionBasura(puntos);
+        eleccionBasura.NuevaBasura();
+        basura.GetComponent<Image>().enabled = true;
+    }
     #endregion
+
+    public IEnumerator SonidoEmpezar()
+    {
+        driloAnim.enabled = false;
+        timer.enabled = false;
+        basura.GetComponent<Image>().enabled = false;
+        audioSource.volume = .3f;
+        audioSource.PlayOneShot(audioEmpezar);
+
+        yield return new WaitForSeconds(8);
+
+        driloAnim.enabled = true;
+        timer.enabled = true;
+        basura.GetComponent<Image>().enabled = true;
+        audioSource.volume = .08f;
+    }
 
     #region TextoAciertoFallo
     public IEnumerator TextoAcierto()
     {
         audioSource.PlayOneShot(audioAcierto);
         driloAnim.SetBool("Acierto", true);
-        //txtAciertoFallo.color = Color.green;
-        //txtAciertoFallo.text = "V";
-        //txtAciertoFallo.enabled = true;
 
         yield return new WaitForSeconds(.33f);
         driloAnim.SetBool("Acierto", false);
-        txtAciertoFallo.enabled = false;
     }
 
     public IEnumerator TextoFallo()
     {
         audioSource.PlayOneShot(audioFallo);
         driloAnim.SetBool("Fallo", true);
-        //txtAciertoFallo.color = Color.red;
-        //txtAciertoFallo.text = "X";
-        //txtAciertoFallo.enabled = true;
 
         yield return new WaitForSeconds(.33f);
         driloAnim.SetBool("Fallo", false);
-        txtAciertoFallo.enabled = false;
     }
     #endregion
 }

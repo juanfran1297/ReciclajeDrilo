@@ -20,7 +20,7 @@ public class Timer : MonoBehaviour
         tiempoText = GameObject.Find("TXT_Timer").GetComponent<Text>();
         crono = GameObject.Find("CronoFill").GetComponent<Image>();
 
-        tiempoMaximo = 60f;
+        tiempoMaximo = 40f;
         tiempo = tiempoMaximo;
 
         derrota = false;
@@ -35,22 +35,16 @@ public class Timer : MonoBehaviour
         crono.fillAmount = tiempo / tiempoMaximo;
         tiempoText.text = "" + tiempo.ToString("f0");
 
-        if ((tiempo <= 60 || tiempo > 60) && tiempo > 40)
+        if (tiempo <= 40 && tiempo > 20)
         {
             crono.color = gradient.Evaluate(1f);
             tiempoText.color = gradient.Evaluate(1f);
         }
 
-        if (tiempo <= 40 && tiempo > 20)
+        if (tiempo <= 20 && tiempo > 10)
         {
             crono.color = gradient.Evaluate(.4f);
             tiempoText.color = gradient.Evaluate(.4f);
-        }
-
-        if (tiempo <= 20 && tiempo > 10)
-        {
-            crono.color = gradient.Evaluate(.2f);
-            tiempoText.color = gradient.Evaluate(.2f);
         }
 
         if (tiempo <= 10 && tiempo > -1)

@@ -63,7 +63,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\PointBarScript.cs" />
+    <Compile Include="Assets\LevelLoader.cs" />
+    <Compile Include="Assets\Scripts\buttonScript.cs" />
     <Compile Include="Assets\Scripts\ContenedorAmarillo.cs" />
     <Compile Include="Assets\Scripts\ContenedorAzul.cs" />
     <Compile Include="Assets\Scripts\ContenedorGris.cs" />
@@ -71,10 +72,14 @@
     <Compile Include="Assets\Scripts\ContenedorPuntoLimpio.cs" />
     <Compile Include="Assets\Scripts\ContenedorVerde.cs" />
     <Compile Include="Assets\Scripts\ControlEscenas.cs" />
+    <Compile Include="Assets\Scripts\ControlPantallaDiploma.cs" />
     <Compile Include="Assets\Scripts\DragDrop.cs" />
     <Compile Include="Assets\Scripts\EleccionBasura.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
+    <Compile Include="Assets\Scripts\Nombre.cs" />
+    <Compile Include="Assets\Scripts\SonidoOpciones.cs" />
     <Compile Include="Assets\Scripts\Timer.cs" />
+    <Compile Include="Assets\Scripts\VidasScript.cs" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro_Properties.cginc" />

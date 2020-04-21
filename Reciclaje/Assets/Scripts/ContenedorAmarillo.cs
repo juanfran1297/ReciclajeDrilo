@@ -30,12 +30,10 @@ public class ContenedorAmarillo : MonoBehaviour, IDropHandler
         {
             if (eventData.pointerDrag.tag == "Amarillo")
             {
-                Debug.Log("Has acertado");
                 gameManager.Acierto();
             }
             else
             {
-                Debug.Log("Has fallado");
                 gameManager.Fallo();
             }
         }

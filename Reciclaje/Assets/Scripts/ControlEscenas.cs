@@ -12,12 +12,27 @@ public class ControlEscenas : MonoBehaviour
 
     public void YouTube()
     {
-        Application.OpenURL("https://www.youtube.com/playlist?list=PLlyfq27A8_DosNPA-UMqZvEl-MYLlXn1C");
+        Application.OpenURL("https://www.youtube.com/channel/UCNhDul0FTn2yQTpJTALoOwQ");
+    }
+
+    public void OpenWeb()
+    {
+        Application.OpenURL("https://www.lapandilladedrilo.com/");
     }
 
     public void Reintentar()
     {
         Scene thisScene = SceneManager.GetActiveScene();
         SceneManager.LoadScene(thisScene.name);
+    }
+
+    public void Jugar()
+    {
+        SceneManager.LoadScene("Juego");
+    }
+
+    public void Menu()
+    {
+        SceneManager.LoadScene("MenuPrincipal");
     }
 }

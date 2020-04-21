@@ -26,12 +26,10 @@ public class ContenedorPuntoLimpio : MonoBehaviour, IDropHandler
         {
             if (eventData.pointerDrag.tag == "PuntoLimpio")
             {
-                Debug.Log("Has acertado");
                 gameManager.Acierto();
             }
             else
             {
-                Debug.Log("Has fallado");
                 gameManager.Fallo();
             }
         }

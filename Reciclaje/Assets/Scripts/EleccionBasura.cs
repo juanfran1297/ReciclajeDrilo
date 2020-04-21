@@ -67,24 +67,7 @@ public class EleccionBasura : MonoBehaviour
             Debug.LogError("No se encuentra el Contenedor Gris");
         }
     }
-    private void Update()
-    {
-        if(gameManager.puntos >= 0 && gameManager.puntos < 25)
-        {
-            numContenedores = 3;
-        }
-        if(gameManager.puntos >= 25 && gameManager.puntos < 50)
-        {
-            numContenedores = 4;
-            puntoLimpio.SetActive(true);
-        }
-        if (gameManager.puntos >= 50)
-        {
-            numContenedores = 6;
-            gris.SetActive(true);
-            marron.SetActive(true);
-        }
-    }
+
     public void NuevaBasura()
     {
         int contenedorRandom = Random.Range(0, numContenedores);
@@ -168,6 +151,29 @@ public class EleccionBasura : MonoBehaviour
                     this.gameObject.tag = "Gris";
                 }
                 break;
+        }
+    }
+
+    public void AparicionBasura(int puntos)
+    {
+        if (puntos >= 0 && puntos < 25)
+        {
+            numContenedores = 3;
+        }
+        if (puntos >= 25 && puntos < 50)
+        {
+            numContenedores = 4;
+            puntoLimpio.SetActive(true);
+        }
+        if (puntos >= 50 && puntos < 70)
+        {
+            numContenedores = 5;
+            marron.SetActive(true);
+        }
+        if (puntos >= 70)
+        {
+            numContenedores = 6;
+            gris.SetActive(true);
         }
     }
 }
