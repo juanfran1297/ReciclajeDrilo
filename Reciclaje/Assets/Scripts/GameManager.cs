@@ -29,6 +29,7 @@ public class GameManager : MonoBehaviour
     private GameObject tryAgain;
     private GameObject victoria;
     private GameObject juego;
+    public LevelLoader levelLoader;
 
     public Animator driloAnim;
 
@@ -64,6 +65,15 @@ public class GameManager : MonoBehaviour
         else
         {
             Debug.LogError("No se encuentra 'CanvasVictoria', asegurate de que está en la escena");
+        }
+        GameObject auxLoader = GameObject.Find("LevelLoader");
+        if(auxLoader != null)
+        {
+            levelLoader = auxLoader.GetComponent<LevelLoader>();
+        }
+        else
+        {
+            Debug.LogError("No se encuentra 'LevelLoader', asegurate de que está en la escena");
         }
 
         juego = GameObject.Find("CanvasPrincipal");
@@ -126,6 +136,7 @@ public class GameManager : MonoBehaviour
             vidasScript.enabled = false;
             timer.enabled = false;
             victoria.SetActive(true);
+            levelLoader.LoadLevel(2);
             juego.SetActive(false);
         }
 

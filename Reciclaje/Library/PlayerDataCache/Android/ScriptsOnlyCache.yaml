@@ -1,36 +1,20 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
-    - ContenedorAmarillo
-    - ContenedorAzul
-    - ContenedorGris
-    - ContenedorMarron
-    - ContenedorPuntoLimpio
-    - ContenedorVerde
     - ControlEscenas
     - ControlPantallaDiploma
-    - DragDrop
-    - EleccionBasura
-    - GameManager
-    - LevelLoader
     - Nombre
     - SonidoOpciones
-    - Timer
-    - VidasScript
-    - buttonScript
     Unity.TextMeshPro.dll:
     - TMPro.TMP_FontAsset
     - TMPro.TMP_Settings
     - TMPro.TMP_SpriteAsset
     - TMPro.TMP_StyleSheet
-    - TMPro.TextMeshProUGUI
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -42,124 +26,15 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.CanvasScaler
     - UnityEngine.UI.Dropdown
     - UnityEngine.UI.GraphicRaycaster
-    - UnityEngine.UI.GridLayoutGroup
     - UnityEngine.UI.Image
     - UnityEngine.UI.InputField
     - UnityEngine.UI.Mask
     - UnityEngine.UI.ScrollRect
     - UnityEngine.UI.Scrollbar
-    - UnityEngine.UI.Slider
     - UnityEngine.UI.Text
     - UnityEngine.UI.Toggle
   sceneClasses:
-    Assets/Scenes/Juego.unity:
-    - Class: 1
-      Script: {instanceID: 0}
-    - Class: 4
-      Script: {instanceID: 0}
-    - Class: 20
-      Script: {instanceID: 0}
-    - Class: 21
-      Script: {instanceID: 0}
-    - Class: 28
-      Script: {instanceID: 0}
-    - Class: 48
-      Script: {instanceID: 0}
-    - Class: 74
-      Script: {instanceID: 0}
-    - Class: 81
-      Script: {instanceID: 0}
-    - Class: 82
-      Script: {instanceID: 0}
-    - Class: 83
-      Script: {instanceID: 0}
-    - Class: 91
-      Script: {instanceID: 0}
-    - Class: 95
-      Script: {instanceID: 0}
-    - Class: 104
-      Script: {instanceID: 0}
-    - Class: 114
-      Script: {instanceID: 9696}
-    - Class: 114
-      Script: {instanceID: 9782}
-    - Class: 114
-      Script: {instanceID: 9854}
-    - Class: 114
-      Script: {instanceID: 9856}
-    - Class: 114
-      Script: {instanceID: 9894}
-    - Class: 114
-      Script: {instanceID: 9944}
-    - Class: 114
-      Script: {instanceID: 10056}
-    - Class: 114
-      Script: {instanceID: 10184}
-    - Class: 114
-      Script: {instanceID: 10228}
-    - Class: 114
-      Script: {instanceID: 10276}
-    - Class: 114
-      Script: {instanceID: 10328}
-    - Class: 114
-      Script: {instanceID: 10446}
-    - Class: 114
-      Script: {instanceID: 10568}
-    - Class: 114
-      Script: {instanceID: 10626}
-    - Class: 114
-      Script: {instanceID: 10810}
-    - Class: 114
-      Script: {instanceID: 10840}
-    - Class: 114
-      Script: {instanceID: 10924}
-    - Class: 114
-      Script: {instanceID: 11028}
-    - Class: 114
-      Script: {instanceID: 11048}
-    - Class: 114
-      Script: {instanceID: 11088}
-    - Class: 114
-      Script: {instanceID: 11110}
-    - Class: 114
-      Script: {instanceID: 11172}
-    - Class: 114
-      Script: {instanceID: 11248}
-    - Class: 114
-      Script: {instanceID: 11372}
-    - Class: 114
-      Script: {instanceID: 11384}
-    - Class: 114
-      Script: {instanceID: 11390}
-    - Class: 114
-      Script: {instanceID: 11440}
-    - Class: 114
-      Script: {instanceID: 11450}
-    - Class: 114
-      Script: {instanceID: 11464}
-    - Class: 114
-      Script: {instanceID: 11492}
-    - Class: 114
-      Script: {instanceID: 11500}
-    - Class: 114
-      Script: {instanceID: 17230}
-    - Class: 115
-      Script: {instanceID: 0}
-    - Class: 128
-      Script: {instanceID: 0}
-    - Class: 157
-      Script: {instanceID: 0}
-    - Class: 213
-      Script: {instanceID: 0}
-    - Class: 222
-      Script: {instanceID: 0}
-    - Class: 223
-      Script: {instanceID: 0}
-    - Class: 224
-      Script: {instanceID: 0}
-    - Class: 225
-      Script: {instanceID: 0}
-    Assets/Scenes/MenuPrincipal.unity:
+    Assets/Scenes/Victoria.unity:
     - Class: 1
       Script: {instanceID: 0}
     - Class: 4
@@ -195,29 +70,43 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 9854}
     - Class: 114
+      Script: {instanceID: 9856}
+    - Class: 114
       Script: {instanceID: 9894}
+    - Class: 114
+      Script: {instanceID: 10184}
     - Class: 114
       Script: {instanceID: 10276}
     - Class: 114
       Script: {instanceID: 10296}
     - Class: 114
+      Script: {instanceID: 10328}
+    - Class: 114
+      Script: {instanceID: 10446}
+    - Class: 114
+      Script: {instanceID: 10568}
+    - Class: 114
       Script: {instanceID: 10626}
     - Class: 114
-      Script: {instanceID: 10840}
+      Script: {instanceID: 10798}
     - Class: 114
-      Script: {instanceID: 10854}
+      Script: {instanceID: 10812}
     - Class: 114
-      Script: {instanceID: 11048}
+      Script: {instanceID: 10842}
     - Class: 114
-      Script: {instanceID: 11088}
+      Script: {instanceID: 10856}
     - Class: 114
-      Script: {instanceID: 11250}
+      Script: {instanceID: 11050}
     - Class: 114
-      Script: {instanceID: 11450}
+      Script: {instanceID: 11090}
     - Class: 114
-      Script: {instanceID: 11482}
+      Script: {instanceID: 11254}
     - Class: 114
-      Script: {instanceID: 76850}
+      Script: {instanceID: 11444}
+    - Class: 114
+      Script: {instanceID: 11454}
+    - Class: 114
+      Script: {instanceID: 11468}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -505,6 +394,12 @@ ScriptsOnlyBuild:
     className: VerticalLayoutGroup
   - hash:
       serializedVersion: 2
+      Hash: c6c03273ba1df72d6bf041ea8dfc70a4
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ControlPantallaDiploma
+  - hash:
+      serializedVersion: 2
       Hash: 783f593b9380cf72d0f7ebfd4a0d4bcd
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
@@ -593,6 +488,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: ContenedorVerde
+  - hash:
+      serializedVersion: 2
+      Hash: d9a3bb5bdfd217d114c4c1e7400418fd
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: LevelLoader
   - hash:
       serializedVersion: 2
       Hash: 0214a0f7146f1f5beb36ca4aba842150
@@ -721,7 +622,7 @@ ScriptsOnlyBuild:
     className: buttonScript
   - hash:
       serializedVersion: 2
-      Hash: b841f4a1b6b7209fc84e9b32e4da1530
+      Hash: 5b2f3fa81e95d32e1403006af10595aa
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: GameManager
@@ -737,20 +638,7 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
-  - hash:
-      serializedVersion: 2
-      Hash: c6c03273ba1df72d6bf041ea8dfc70a4
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: ControlPantallaDiploma
-  - hash:
-      serializedVersion: 2
-      Hash: 78ddee5beb25a8214ae8e23574e16e2b
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: LevelLoader
   platform: 13
   scenePathNames:
-  - Assets/Scenes/MenuPrincipal.unity
-  - Assets/Scenes/Juego.unity
-  playerPath: D:/GitHub/ReciclajeDrilo/Keys y APKs/ReciclajeVeryLow.apk
+  - Assets/Scenes/Victoria.unity
+  playerPath: D:/GitHub/ReciclajeDrilo/Keys y APKs/ReciclajeFinal.apk

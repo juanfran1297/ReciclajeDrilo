@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class LevelLoader : MonoBehaviour
 {
-    public GameObject panelBotones;
+    //public GameObject panelBotones;
     public GameObject loadingScreen;
     public Slider slider;
 
@@ -20,7 +20,7 @@ public class LevelLoader : MonoBehaviour
     {
         AsyncOperation operation = SceneManager.LoadSceneAsync(sceneIndex);
 
-        panelBotones.SetActive(false);
+        //panelBotones.SetActive(false);
         loadingScreen.SetActive(true);
 
         while (!operation.isDone)
