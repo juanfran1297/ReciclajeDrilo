@@ -8,31 +8,30 @@ public class ControlPantallaDiploma : MonoBehaviour
     public GameObject video;
     public GameObject nombreYFecha;
 
+    public AudioSource audioSource;
+
     // Start is called before the first frame update
     void Start()
     {
-        //video = GameObject.Find("VideoFondo");
-        //if (video != null)
-        //{
-            video.SetActive(true);
-        //}
-        //else Debug.LogError("No se encuentra el video correspondiente, asegurate de que haya un GameObject 'Video Fondo' en la escena");
-
-        //nombreYFecha = GameObject.Find("NombreYFechaFondo");
-        //if (nombreYFecha != null)
-        //{
-            nombreYFecha.SetActive(true);
-        //}
-        //else Debug.LogError("No se encuentra el video correspondiente, asegurate de que haya un GameObject 'NombreYFechaFondo' en la escena");
+        video.SetActive(true);
+        nombreYFecha.SetActive(true);
+        StartCoroutine(Continuar());
     }
 
     public void CerrarVideo()
     {
         video.SetActive(false);
+        audioSource.Play();
     }
 
     public void CerrarNombreYFecha()
     {
         nombreYFecha.SetActive(false);
+    }
+
+    public IEnumerator Continuar()
+    {
+        yield return new WaitForSeconds(14f);
+        CerrarVideo();
     }
 }
