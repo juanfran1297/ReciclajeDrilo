@@ -33,6 +33,8 @@ public class GameManager : MonoBehaviour
 
     public Animator driloAnim;
 
+    public GameObject textoArrastrar;
+
     #region StartUpdate
     // Start is called before the first frame update
     void Start()
@@ -145,6 +147,7 @@ public class GameManager : MonoBehaviour
             vidasScript.enabled = false;
             timer.enabled = false;
             tryAgain.SetActive(true);
+            textoArrastrar.SetActive(false);
         }
 
         switch (puntos)
@@ -172,6 +175,7 @@ public class GameManager : MonoBehaviour
     #region FuncionesAciertoFallo
     public void Acierto()
     {
+        textoArrastrar.SetActive(false);
         StartCoroutine(TextoAcierto());
         puntos++;
         timer.tiempo += 5;
@@ -229,6 +233,7 @@ public class GameManager : MonoBehaviour
         driloAnim.enabled = true;
         timer.enabled = true;
         basura.GetComponent<Image>().enabled = true;
+        textoArrastrar.SetActive(true);
         audioSource.volume = .08f;
     }
 

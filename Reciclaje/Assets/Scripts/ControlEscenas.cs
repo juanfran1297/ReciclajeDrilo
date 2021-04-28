@@ -10,15 +10,15 @@ public class ControlEscenas : MonoBehaviour
         Application.Quit();
     }
 
-    public void YouTube()
-    {
-        Application.OpenURL("https://www.youtube.com/channel/UCNhDul0FTn2yQTpJTALoOwQ");
-    }
+    //public void YouTube()
+    //{
+    //    Application.OpenURL("https://www.youtube.com/channel/UCNhDul0FTn2yQTpJTALoOwQ");
+    //}
 
-    public void OpenWeb()
-    {
-        Application.OpenURL("https://www.lapandilladedrilo.com/");
-    }
+    //public void OpenWeb()
+    //{
+    //    Application.OpenURL("https://www.lapandilladedrilo.com/");
+    //}
 
     public void Reintentar()
     {
