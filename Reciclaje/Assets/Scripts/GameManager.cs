@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -30,6 +30,10 @@ public class GameManager : MonoBehaviour
     private GameObject victoria;
     private GameObject juego;
     public LevelLoader levelLoader;
+    
+    public GameObject botonFx;
+    public GameObject botonMusica;
+    public GameObject botonVolver;
 
     public Animator driloAnim;
 
@@ -147,6 +151,9 @@ public class GameManager : MonoBehaviour
             vidasScript.enabled = false;
             timer.enabled = false;
             tryAgain.SetActive(true);
+	    botonFx.SetActive(false);
+  	    botonMusica.SetActive(false);
+	    botonVolver.SetActive(false);
             textoArrastrar.SetActive(false);
         }
 
@@ -204,6 +211,9 @@ public class GameManager : MonoBehaviour
         audioSource.volume = .3f;
         audioSource.PlayOneShot(audioSiguienteNivel);
         siguienteNivel.SetActive(true);
+	botonFx.SetActive(false);
+  	botonMusica.SetActive(false);
+	botonVolver.SetActive(false);
         timer.enabled = false;
         basura.GetComponent<Image>().enabled = false;
     }
